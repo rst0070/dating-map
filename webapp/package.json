@@ -1,0 +1,16 @@
+{
+  "name": "dating-map-webapp",
+  "version": "1.0.0",
+  "description": "webapp for dating-map",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d bin"
+  },
+  "author": "Wonbin Kim",
+  "license": "ISC",
+  "devDependencies":{
+	"@babel/core":"^7.12.10",
+	"@babel/cli":"^7.12.10",
+	"@babel/preset-react":"^7.9.0"
+  }
+}
