@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+	<a href="javascript:login();"><img src="resources/kakao_login_large_wide.png"/></a>
+	dddddddd
+	<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	<script>
+		Kakao.init("ed86d57ca1f786008dad33bfb76f05ea");
+		function login(){
+			Kakao.Auth.authorize({
+				redirectUri:"http://1.240.103.57:3000/login"
+			});
+		}
+	</script>
+
+
+
+
+</body>
+</html>
