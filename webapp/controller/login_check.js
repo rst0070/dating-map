@@ -1,6 +1,7 @@
 module.exports = (req, res, next)=>{
-	if(req.session.login != "true" && 
-	req.path != "/login"){
+	console.log(req.path.substring(0,6));
+	if(req.session.login != "true" || 
+	(req.path.substring(0,6) != "/login")){
 		res.redirect('/login');
 	}
 	next();
