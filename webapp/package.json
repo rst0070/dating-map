@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "node app",
 		"test": "node test.js",
-		"build": "babel resources/src -d resources/bin"
+		"build": "babel resources/src -d resources/js"
 	},
 	"author": "Wonbin Kim",
 	"license": "ISC",
