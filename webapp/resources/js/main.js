@@ -32,9 +32,11 @@ var isMenuOpen = false;
 $('#menu-button').on('click', event => {
   if (isMenuOpen) {
     event.target.classList.remove('open');
-    isMenuOpen = false; //menu_container.style.left = '-'+innerWidth+'px';
+    isMenuOpen = false;
+    menu_container.style.left = '-' + innerWidth + 'px';
   } else {
     event.target.classList.add('open');
-    isMenuOpen = true; //menu_container.style.left = '0px';
+    isMenuOpen = true;
+    menu_container.style.left = '0px';
   }
 });
