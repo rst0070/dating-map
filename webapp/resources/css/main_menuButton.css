@@ -1,0 +1,52 @@
+/*setting of menu button*/
+.menu-box {
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 50px;
+	height: 50px;
+	display: flex;
+	flex-direction: column;
+	border: 5px solid white;
+
+}
+	#menu-button {
+		top: 22px;
+		position: absolute;
+		padding: 0;
+		border-radius: 5px;
+		width: 50px;
+		height: 6px;
+		background: black;
+		transition: all .5s ease-in-out .2s;
+	}
+		#menu-button::before, #menu-button::after {
+			content: "";	
+			position: absolute;
+			padding: 0;
+			border-radius: 5px;
+			width: 50px;
+			height: 6px;
+			background: black;
+			transition: all .5s ease-in-out .2s;
+		}
+		#menu-button::before {
+			transform: translateY(-20px);
+		}
+		#menu-button::after {
+			transform: translateY(20px);
+		}
+			.open#menu-button {
+				background: none;
+			}
+			.open#menu-button::before {
+				transform: rotate(45deg) translate(0, 0);
+			}
+			.open#menu-button::after {
+				transform: rotate(-45deg) translate(0 , 0);
+			}
+			.open#menu-container {
+				left: 0;
+			}

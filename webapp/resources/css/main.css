@@ -2,57 +2,6 @@ body {
 	width: 100%;
 	height: 100%;
 }
-/*setting of menu button*/
-.menu-box {
-	z-index: 2;
-	position: absolute;
-	top: 0;
-	left: 0;
-
-	width: 50px;
-	height: 100px;
-	display: flex;
-	flex-direction: column;
-	border: 5px solid white;
-
-}
-	#menu-button {
-		top: 50px;
-		position: absolute;
-		padding: 0;
-		border-radius: 5px;
-		width: 50px;
-		height: 6px;
-		background: black;
-		transition: all .5s ease-in-out .2s;
-	}
-		#menu-button:before,#menu-button:after {
-			position: absolute;
-			padding: 0;
-			border-radius: 5px;
-			width: 50px;
-			height: 6px;
-			background: black;
-			transition: all .5s ease-in-out .2s;
-		}
-		#menu-button:before {
-			top: -20px; left: 0;
-		}
-		#menu-button:after {
-			top: 16px; left: 0;
-		}
-			.open#menu-button {
-				background: none;
-			}
-			.open#menu-button:before {
-				transform: rotate(45deg) translate(0, -35px);
-			}
-			.open#menu-button:after {
-				transform: rotate(45deg) translate(0 , 35px);
-			}
-			.open#menu-container {
-				left: 0;
-			}
 /*setting of menu panel*/
 #menu-container {
 	padding:0;
@@ -65,27 +14,26 @@ body {
 	background: rgba(250,250,250,0.5);
 	transition: all .5s ease-in-out;
 }
-	div.travle_box {
+	.travle_box {
 		margin-left: auto;
 		margin-right: auto;
 		width: 200px;
 		height: 200px;
 		border: 5px solid black;	
 	}
-	.travle_box .travle_information {
-		display: flex;
-		flex-direction: row;
+	.travle_information {
+		//display: flex;
+		//flex-direction: row;
 	}
-		div.travle_information input {
-			display: none;
+		.travle_information input {
 			float: left;
 			width: 20px;
 		}
-		div.travle_information p {
-			display: inline-block;
+		.travle_information p {
+			display: none;
 			width: 20px;
 		}
-		div.travle_information a {
+		.travle_information a {
 			display: inline-block;
 			width: 10px;
 		}

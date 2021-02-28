@@ -1,0 +1,9 @@
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+#login-box {
+	margin-left: auto;
+	margin-right: auto;
+}

@@ -7,6 +7,20 @@ router.get('/', (req, res)=>{
 		res.render('login');
 });
 router.get('/authcode', (req, res)=>{
+	getToken(req.query.code,(value)=>{
+		
+	});
+  
+});
+
+router.get('/signup',(req, res)=>{
+
+});
+
+/**
+ * @param authcode {string} : authcode that from client get query
+ */
+function getToken(authcode, callback){
 
 	var data =JSON.stringify( {
 		grant_type: "authorization_code",
@@ -19,15 +33,10 @@ router.get('/authcode', (req, res)=>{
 		headers: {
 			'Content-Type':'application/x-www-form-urlencoded;charset=utf-8',
 			'Content-Length': Buffer.byteLength(data)
+		},(res)=>{
+			callback(res);
 		}
 	});
-
-	tokenRequest.on('response',(r)=>{//receive token
-		console.log(r);
-		req.session.access_token = r.body.access_token;
-
-		res.end(r.access_token);
-	});
-  tokenRequest.end(data);
-});
+	tokenRequest.end(data);
+}
 module.exports = router;
