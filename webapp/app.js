@@ -31,13 +31,11 @@ app.use(express.static(path.join(__dirname,'resources')));
 
 
 const route = {
-	signup: require('./controller/signup.js'),
 	login_check: require('./controller/login_check.js'),
   login: require('./controller/login.js'),
 	main: require('./controller/main.js')
 };       
 //app.use(route.login_check);
-app.use('/signup', route.signup);
 app.use('/login', route.login);
 app.use('/', route.main);
 
