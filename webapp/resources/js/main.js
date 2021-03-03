@@ -20,6 +20,10 @@ $('#menu-button').on('click', event => {
   }
 });
 
+$('.travle_title').on('click', event => {
+  $(event.target).closest('.travle_box').find('.travle_locations').slideToggle();
+});
+
 function setContainerSize() {
   menu_container.style.width = innerWidth + 'px';
   menu_container.style.height = innerHeight + 'px';

@@ -18,25 +18,37 @@ body {
 		margin-left: auto;
 		margin-right: auto;
 		width: 200px;
-		height: 200px;
 		border: 5px solid black;	
 	}
-	.travle_information {
-		//display: flex;
-		//flex-direction: row;
+		.travle_information {
+			width : 100%;
+			display: flex;
+			flex-direction: row;
+		}
+			.travle_checkbox {
+				margin-top: auto;
+				margin-bottom:auto;
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+			.travle_title {
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.travle_link {
+				margin-top: auto;
+				margin-bottom: auto;
+			}
+	#add_travle_button {
+		margin-top: 30px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50px;
+		height: 50px;
+		border-radius: 25px;
+
+		border: 5px black solid;
 	}
-		.travle_information input {
-			float: left;
-			width: 20px;
-		}
-		.travle_information p {
-			display: none;
-			width: 20px;
-		}
-		.travle_information a {
-			display: inline-block;
-			width: 10px;
-		}
 #map-container {
 	top: 0;
 	left: 0;

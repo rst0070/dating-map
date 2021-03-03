@@ -15,16 +15,19 @@
 	<div id="menu-container">
 		<% for(travle in travle_list){ %>
 			<div class="travle_box">
-				<div class"travle_information">
-					<input type="checkbox"/>
-					<p><%= travle %></p>
-					<a href="<%= travle_list[travle].link %>"><i class="fas fa-external-link-alt"></i></a>
+				<div class="travle_information">
+					<input class="travle_checkbox" type="checkbox"/>
+					<p class="travle_title"><%= travle %></p>
+					<a class=""travle_link" href="<%= travle_list[travle].link %>"><i class="fas fa-external-link-alt"></i></a>
 				</div>
-				<div class="travle_locations">
-
+				<div class="travle_locations" style="display:none;">
+					<% for(location in travle_list[travle].locations){ %>
+						<p class="travle_location"><%= location %></p>
+					<% } %>
 				</div>
 			</div>
 		<% } %>
+		<div id="add_travle_button"></div>
 	</div>
 	<div id="map-container"></div>
 
