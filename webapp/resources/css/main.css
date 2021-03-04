@@ -14,31 +14,7 @@ body {
 	background: rgba(250,250,250,0.5);
 	transition: all .5s ease-in-out;
 }
-	.travle_box {
-		margin-left: auto;
-		margin-right: auto;
-		width: 200px;
-		border: 5px solid black;	
-	}
-		.travle_information {
-			width : 100%;
-			display: flex;
-			flex-direction: row;
-		}
-			.travle_checkbox {
-				margin-top: auto;
-				margin-bottom:auto;
-				margin-left: 10px;
-				margin-right: 10px;
-			}
-			.travle_title {
-				margin-left: auto;
-				margin-right: auto;
-			}
-			.travle_link {
-				margin-top: auto;
-				margin-bottom: auto;
-			}
+
 	#add_travle_button {
 		margin-top: 30px;
 		margin-left: auto;

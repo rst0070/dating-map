@@ -43,3 +43,7 @@ function loadMap() {
   };
   map = new kakao.maps.Map(map_container, options);
 }
+
+function openTravle(title){
+  $.ajax();
+}
