@@ -1,13 +1,22 @@
 body {
 	display: flex;
 	flex-direction: column;
+	background: linear-gradient(-90deg, #1234, #5678);
 }
 
 #login-box {
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	margin-right: auto;
+	
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+#login-box * {
 	margin-left: auto;
 	margin-right: auto;
 }
-#login-img {
-	width: 200px;
-	height: 50px;
+#quokka {
+	width: 300px;
 }
