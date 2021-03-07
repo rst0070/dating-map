@@ -8,7 +8,11 @@
 <body>
 	<div id="login-box">
 		<img id="quokka"  src="https://pbs.twimg.com/media/EB5Pq3rVUAAYjxI.jpg"/>
+		<input type="text" placeholder="아이디"/>
+		<input type="text" placeholder="비밀번호"/>
+		<Button>아이디로 로그인</Button>
 		<a href="javascript:login();"><img id="login-img" src="/kakao_login_large_wide.png"/></a>
+		<a href="/signup">회원가입</a>
 	</div>
 <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 	<script>
@@ -19,7 +23,8 @@
 				redirectUri:"http://127.0.0.1:3000/login/authcode"
 			});
 		}
-		$('#login-img').width($('#quokka').width());
+		$('#login-box *').width($('#quokka').width());
+		$('#login-box Button').width('90%');
 	</script>
 </body>
 </html>

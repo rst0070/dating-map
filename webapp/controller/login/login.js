@@ -7,7 +7,11 @@ router.get('/', (req, res)=>{
 		res.render('login/login');
 });
 router.get('/authcode', (req, res)=>{
-	getToken(req.query.code,(value)=>{
+	getToken(req.query.code,(isErr, value)=>{
+		if(isErr){
+			res.redirect('/login');
+			return;
+		}
 		req.session.access_token = value.access_token;
 		console.log('dadsd');
 		//getting user_id (unique and immortal data)
@@ -32,12 +36,15 @@ router.get('/signup',(req, res)=>{
 
 /**
  * @param authcode {string} : authcode that from client get query
+ * @param callback {function(err, data)} err is boolean which present error is occured or not.
+ * 		data contains access_token and etc.
  */
 function getToken(authcode, callback){
 
 	var data =JSON.stringify( {
 		grant_type: "authorization_code",
-		client_id: "db944c1a0b165f52f3eb267d261c58f7",
+		client_id: '6037a18c275805129ccd6ecac305122e',
+		//client_id: "db944c1a0b165f52f3eb267d261c58f7",
 		redirect_uri: "http://127.0.0.1/login/authcode",
 		code: authcode,
 		client_secret:"NKp19wUoHhwYLofnN6jxhIZhkStd1lST"
@@ -52,8 +59,12 @@ function getToken(authcode, callback){
 			var data = "";
 			res.on('readable',()=>{
 				data += res.read();
-				console.log(data);
-				callback(data);
+				if(data.access_token){
+					callback(false,data);
+				}else{
+					console.log('error: '+data);
+					callback(true, data);
+				}
 			});
 		});
 	tokenRequest.end(data);

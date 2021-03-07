@@ -1,7 +1,7 @@
 body {
 	display: flex;
 	flex-direction: column;
-	background: linear-gradient(-90deg, #1234, #5678);
+	background-image: linear-gradient(-90deg, #123423, #562378);
 }
 
 #login-box {
@@ -12,11 +12,21 @@ body {
 	
 	border-radius: 5px;
 	background-color: rgba(255, 255, 255, 0.5);
+
+	display: flex;
+	flex-direction: column;
 }
 #login-box * {
 	margin-left: auto;
 	margin-right: auto;
 }
+	#login-box input {
+		height: 20px;
+		border-radius: 0;
+		background : none;
+		appearance: none;
+
+	}
 #quokka {
 	width: 300px;
 }
