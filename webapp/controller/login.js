@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 router.get('/', (req, res)=>{
-		res.render('login');
+		res.render('login/login');
 });
 router.get('/authcode', (req, res)=>{
 	getToken(req.query.code,(value)=>{
@@ -37,16 +37,16 @@ function getToken(authcode, callback){
 
 	var data =JSON.stringify( {
 		grant_type: "authorization_code",
-		client_id: "ed86d57ca1f786008dad33bfb76f05ea",
+		client_id: "db944c1a0b165f52f3eb267d261c58f7",
 		redirect_uri: "http://127.0.0.1/login/authcode",
 		code: authcode,
-		client_secret: "HB5zTZ0ILZbuElc52KMH3WGyVxtQRzaj"
+		client_secret:"NKp19wUoHhwYLofnN6jxhIZhkStd1lST"
 	});
 	var tokenRequest = https.request('https://kauth.kakao.com/oauth/token',{	
 		method: 'POST',
 		headers: {
-			'Content-Type':'application/x-www-form-urlencoded;charset=utf-8',
-			'Content-Length': Buffer.byteLength(data)
+			'Content-Type':'application/x-www-form-urlencoded;charset=utf-8'
+			//,'Content-Length': Buffer.byteLength(data)
 		}}
 		,(res)=>{
 			var data = "";
