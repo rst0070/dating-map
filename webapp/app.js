@@ -30,16 +30,12 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname,'resources')));
 
 
-const route = {
-	login_check: require('./controller/login_check.js'),
-  login: require('./controller/login/login.js'),
-	sign_up: require('./controller/login/signup.js'),
-	main: require('./controller/main.js')
-};       
-//app.use(route.login_check);
-app.use('/login', route.login);
-app.use('/signup', route.sign_up);
-app.use('/', route.main);
+app.use('/', require('./controller/main/travle_list.js'));
+app.use('/travle', require('./controller/main/travle.js'));
+
+app.use('/login', require('./controller/login/login.js'));
+app.use('/signup', require('./controller/login/signup.js'));
+
 
 //error handling
 app.use(function(err, req, res, next){

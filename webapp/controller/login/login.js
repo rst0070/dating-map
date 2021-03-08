@@ -1,11 +1,27 @@
 const express = require('express');
 const https = require('https');
 const router = express.Router();
-
+const model = require('../../model/login/login.js');
 
 router.get('/', (req, res)=>{
 		res.render('login/login');
 });
+
+router.post('/do-login', (req, res)=>{
+	var id = req.body.id;
+	var pw = req.body.pw;
+
+	//model을 통해 사용자 정보가 맞는지 확인한다.
+	model.checkIdPw(id, pw, (valid)=>{
+		if(valid){
+			req.session.id = id;
+			req.session.login = true;
+			res.redirect('/main');
+		}else{ res.redirect('/login');}
+	});
+});
+
+/** kakao login */
 router.get('/authcode', (req, res)=>{
 	getToken(req.query.code,(isErr, value)=>{
 		if(isErr){
