@@ -1,15 +1,22 @@
 const express = require('express');
 const router = express.Router();
-
+const model = require('../../model/main/travle.js');
+/**
+ * travle id를 받아서 해당 travle의 정보를 가져와 보여준다.
+ * 
+ * locations.location = {
+ * 	date, x, y,
+ * 	contents : {
+ * 		title, description, photos
+ * 	}
+ * }
+ */
 router.get('/', (req, res)=>{
-	const data = {
-		"부산여행":{"link":"https://rst0070.github.io",
-				locations:{'광안리':'google.com',
-							'ㄴㅇㄴㅇ':'ㄴㅇㄴㅇ'}},
-		"서울여행":{"link":"https://rst0070.github.io",	locations:{'광안리':'google.com',
-		'ㅇㄴㅇㄴㅇ':'ㄴㅇㄴㅇ'}}	
-	};
-	res.render('main', {travle_list: data});
+	const id = req.query.travle_id;
+	/*
+		data 받아오기...
+	*/
+	res.render('main/travle');
 });
 
 module.exports = router;
