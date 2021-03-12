@@ -7,7 +7,22 @@ router.get('/',(req, res)=>{
 });
 
 router.post('/id-check', (req, res)=>{
-	var valid = model.id_check(req.body.id);//boolean;
-	res.end({valid: valid});
+	console.log('id checking');
+	model.id_check(req.body.id+'', (valid)=>{
+		res.json({valid: valid});
+	});
+	
 });
+
+router.post('/enroll', (req, res)=>{
+	const id = req.body.id;
+	const pw = req.body.pw;
+	model.enroll(id, pw, (err)=>{
+		if(err){
+			res.json({valid: false});
+		}else{
+			res.json({valid: true});
+		}
+	});
+})
 module.exports = router;

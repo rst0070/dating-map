@@ -12,12 +12,19 @@ router.post('/do-login', (req, res)=>{
 	var pw = req.body.pw;
 
 	//model을 통해 사용자 정보가 맞는지 확인한다.
-	model.checkIdPw(id, pw, (valid)=>{
-		if(valid){
-			req.session.id = id;
-			req.session.login = true;
-			res.redirect('/main');
-		}else{ res.redirect('/login');}
+	model.checkIdPw(id, pw, (err, valid)=>{
+		if(err){
+			res.redirect('/login');
+		}else{
+			if(valid){
+				req.session.user_id = id;
+				req.session.login = true;
+				res.redirect('/');
+			}else{
+				res.redirect('/login');
+			}
+		}
+		
 	});
 });
 

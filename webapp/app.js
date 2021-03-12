@@ -29,21 +29,24 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(express.static(path.join(__dirname,'resources')));
 
+const db = require('./model/db.js');
+db.connect(()=>{
+    app.use('/', require('./controller/main/travle_list.js'));
+    app.use('/travle', require('./controller/main/travle.js'));
 
-app.use('/', require('./controller/main/travle_list.js'));
-app.use('/travle', require('./controller/main/travle.js'));
-
-app.use('/login', require('./controller/login/login.js'));
-app.use('/signup', require('./controller/login/signup.js'));
+    app.use('/login', require('./controller/login/login.js'));
+    app.use('/signup', require('./controller/login/signup.js'));
 
 
-//error handling
-app.use(function(err, req, res, next){
+    //error handling
+    app.use(function(err, req, res, next){
 
-    console.log(err.message);
-});
+        console.log(err.message);
+    });
 
-const port = 3000;
-app.listen(port, function(){
-    console.log('listening.. port: ',port);
-});
+    const port = 3000;
+    app.listen(port, function(){
+        console.log('listening.. port: ',port);
+    });
+})
+
