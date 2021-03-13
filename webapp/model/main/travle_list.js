@@ -1,4 +1,4 @@
-const db = 'dddddd'
+const db = require('../db.js');
 
 var model = {};
 
@@ -39,6 +39,12 @@ model.getTravleList = (user_id, callback) => {
     callback(travle_list);
 }
 
+model.addTravle = (owner_id, data) => {
+    db.query({
+        text : '',
+        values : []
+    },)
+}
 model.userInformation = ()=>{
 
 }

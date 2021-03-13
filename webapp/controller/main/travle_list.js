@@ -18,12 +18,14 @@ router.get('/add_travle', (req, res)=>{
 });
 
 router.post('/add_travle', (req, res)=>{
+    
     var data = {
         title : req.body.title,
         start_date : req.body.start_date,
         end_date : req.body.end_date,
         description : req.body.description
     }
-    model.addTravle(data);
+    
+    model.addTravle(req.session.user_id, data);
 });
 module.exports = router;
